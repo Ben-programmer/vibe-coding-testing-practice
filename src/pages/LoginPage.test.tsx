@@ -118,7 +118,7 @@ describe('LoginPage', () => {
             await userEvent.type(screen.getByLabelText('電子郵件'), 'test@example.com');
             await userEvent.type(screen.getByLabelText('密碼'), '12345678');
             fireEvent.click(screen.getByRole('button', { name: '登入' }));
-            expect(await screen.findByText('密碼必須包含英,asdasd123$文字母和數字')).toBeInTheDocument();
+            expect(await screen.findByText('密碼必須包含英文字母和數字')).toBeInTheDocument();
         });
 
         it('Email 與密碼同時無效，應同時顯示兩個欄位的錯誤訊息', async () => {
